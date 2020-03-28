@@ -2,6 +2,7 @@
 
 int main()
 {
-    printf("%d\n",ft_strlen("dffdfddg"));
+    char *a =NULL;
+    printf("%s\n",ft_strcpy(a,"jjj"));
     return 0;
 }
