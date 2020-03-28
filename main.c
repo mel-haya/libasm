@@ -2,7 +2,11 @@
 
 int main()
 {
-    char *a =NULL;
-    printf("%s\n",ft_strcpy(a,"jjj"));
+    char *a = malloc(1000);
+    int fd = open("ft_read.s",O_RDONLY);
+    ft_read(fd,a,0);
+
+    printf("%s\n",a);
+    free(a);
     return 0;
 }
