@@ -1,12 +1,10 @@
 #include "libasm.h"
+#include <string.h>
 
 int main()
 {
-    char *a = malloc(1000);
-    int fd = open("ft_read.s",O_RDONLY);
-    ft_read(fd,a,0);
-
-    printf("%s\n",a);
-    free(a);
+    char *a= NULL;
+    printf("%d\n",ft_strcmp(a,"hellb"));
+    printf("%d\n",strcmp(a,"hellb"));
     return 0;
 }
