@@ -1,10 +1,8 @@
 #include "libasm.h"
-#include <string.h>
 
 int main()
 {
-    char *a= NULL;
-    printf("%d\n",ft_strcmp(a,"hellb"));
-    printf("%d\n",strcmp(a,"hellb"));
+    char *a = ft_strdup("fdggdgd");
+    printf("%s\n",a);
     return 0;
 }
