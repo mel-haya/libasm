@@ -2,7 +2,7 @@
 
 int main()
 {
-    char *a = ft_strdup("fdggdgd");
-    printf("%s\n",a);
+    ft_write(1,"Hello",5);
+
     return 0;
 }

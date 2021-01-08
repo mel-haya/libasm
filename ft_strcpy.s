@@ -1,7 +1,7 @@
 section .text
-	global ft_strcpy
+	global _ft_strcpy
 
-ft_strcpy:
+_ft_strcpy:
 	mov		rbx, 0
 	cmp     rdi, 0
 	jz		done

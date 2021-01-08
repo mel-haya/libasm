@@ -1,24 +1,24 @@
 section .text
-	global ft_strdup
-	extern malloc
-	extern ft_strlen
-	extern ft_strcpy
+	global _ft_strdup
+	extern _malloc
+	extern _ft_strlen
+	extern _ft_strcpy
+	
 
 ;char *strdup(const char *s)
 ;void *malloc(size_t size);
 
 
-ft_strdup:
-	mov		rax, 0
-	call    ft_strlen
-	inc		rax
-	mov     rsi, rdi
-	mov     rdi, rax
-	call	malloc
-	mov		rdi, rax
-	call	ft_strcpy
-	done:
-		ret
+_ft_strdup:
+	push	rdi
+	call    _ft_strlen 	
+	inc		rax			;rax = strlen(input) + 1;
+	mov     rdi, rax    
+	call	_malloc		;malloc(rax);
+	pop		rsi
+	mov		rdi, rax	
+	call	_ft_strcpy	;ft_strcpy(output,"hello")
+	ret
 
 
 

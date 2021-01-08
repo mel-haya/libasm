@@ -1,7 +1,7 @@
 section .text
-	global ft_strcmp
+	global _ft_strcmp
 
-ft_strcmp:
+_ft_strcmp:
 	mov rax, 0
 	mov rbx, 0
 	mov rcx, 0
@@ -11,9 +11,9 @@ ft_strcmp:
 		inc rbx
 	loop:
 		mov     cl, BYTE[rdi + rbx]
+		mov		dl, BYTE[rsi + rbx]
 		cmp     cl, 0
 		jz      done
-		mov		dl, BYTE[rsi + rbx]
 		cmp     cl, dl 
 		jne     done
 		jmp     increment

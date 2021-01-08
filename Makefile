@@ -1,19 +1,20 @@
-NAME = libasm.a
+LIBNAME = libasm.a
+NASFLAGS= -fmacho64
+ASMSRCS = ft_strcmp.s ft_strcpy.s ft_strlen.s ft_strdup.s ft_read.s ft_write.s
+ASMOBJ = $(ASMSRCS:.s=.o)
 
-SRCS = ft_strlen.s
-OBJS = $(SRCS:.s=.o)
+%.o:		%.s
+	nasm $(NASFLAGS) $< 
+	
+all:$(LIBNAME)
 
-FLAGS = -Wall -Werror -Wextra
+$(LIBNAME): $(ASMOBJ)
+	ar rcs $(LIBNAME) $(ASMOBJ)
 
-all : $(NAME)
+clean:
+	@rm -rf $(ASMOBJ)
 
-%.o : %.s
-	nasm -f elf64 $<
+fclean: clean
+	@rm -rf $(LIBNAME)
 
-$(NAME) : $(OBJS)
-	ar -rc $(NAME) $(OBJS)
-
-test :
-	cc main.c libasm.a
-	clear
-	./a.out
+re: fclean all
