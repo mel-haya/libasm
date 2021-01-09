@@ -2,7 +2,6 @@ section .text
 	global _ft_strcmp
 
 _ft_strcmp:
-	mov rax, 0
 	mov rbx, 0
 	mov rcx, 0
 	mov rdx, 0

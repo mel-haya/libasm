@@ -2,10 +2,7 @@ section .text
 	global _ft_strcpy
 
 _ft_strcpy:
-	mov		rbx, 0
-	cmp     rdi, 0
-	jz		done
-	jmp		loop
+	mov		rbx, -1
 	increment:
 		inc		rbx
 	loop:
